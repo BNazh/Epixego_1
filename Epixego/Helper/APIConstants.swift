@@ -11,6 +11,7 @@ import UIKit
 struct APIConstants {
     // 3000 backend
     //8080 frontend
+    //http://13.56.79.215:8080
 //    http://localhost:3000/epixego/
     static let baseURl: String = "http://13.56.79.215:3000/epixego/"
 // http://13.56.79.215:3000/
@@ -18,7 +19,13 @@ struct APIConstants {
     
     static let profileRegsiterURL: String = "profile/register"
     
+    static let uploadImageURL: String = "uploadImage"
+    
+    static let uploadResumeURL: String = "uploadResume"
+    
     static let searchPeopleURL: String = "profile/search/"
+    
+    static let findPeopleURL: String = "findPeople"
 
     static let searchInternshipURL: String = "internship/search/"
     
@@ -26,4 +33,8 @@ struct APIConstants {
     static let searchJobStatusURL: String = "findJobs4Candidate/"
     
     static let changeStatusURL: String = "changeStatus/"
+    
+    static let contactUsURL: String = "email"
+    
+    static let uploadURL: String = "uploads/"
 }

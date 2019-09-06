@@ -41,6 +41,7 @@ class JobsResultSourceModel: Mappable {
     
     var generalInfo            : GeneralInfoResultJobsModel?
     var experience             : experienceModel?
+    var candidates             : [CandidateStateModel]?
     
     var desiredSkills          : [String]?
     var recruiter              : String?
@@ -54,6 +55,7 @@ class JobsResultSourceModel: Mappable {
     func mapping(map: Map) {
         generalInfo       <- map["generalInfo"]
         experience        <- map["experience"]
+        candidates        <- map["candidates"]
         desiredSkills     <- map["desiredSkills"]
         recruiter         <- map["recruiter"]
         applicants        <- map["applicants"]

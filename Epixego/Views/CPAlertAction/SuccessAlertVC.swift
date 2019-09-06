@@ -24,7 +24,7 @@ class SuccessAlertVC: CPAlertVC {
     }
     
     func showCheckImage(_ isCheck: Bool){
-        imgLogo = (isCheck) ? #imageLiteral(resourceName: "ic_check") : #imageLiteral(resourceName: "ic_music")
+        imgLogo = (isCheck) ? UIImage.init(named: "success-icon") : UIImage.init(named: "")
     }
     
     /// Custom your UI in here

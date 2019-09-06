@@ -11,7 +11,6 @@ import Foundation
 
 struct DBLocalKeys {
     
-    
     static let userId    : String = "userId"
     static let token     : String = "token"
     static let type      : String = "type"

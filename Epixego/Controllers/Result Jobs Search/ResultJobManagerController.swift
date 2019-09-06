@@ -12,15 +12,28 @@ import ObjectMapper
 
 extension ResultJobSearchController: HttpControllerDelegate {
    
-    func receivedResponseArray(_ dicResponse: [String : Any], tag: Int) {
-        
-        let tempResultJobsModel = Mapper<ResultJobsModel>().map(JSON: dicResponse)!
-        itemsResultJobModel += tempResultJobsModel.items ?? []
-        
-        if (tempResultJobsModel.items?.count ?? 0) > 0 {
+    func receivedResponseArray(_ dicResponse: [String: Any], tag: Int) {
+      
+        switch tag {
+        case 1:
+            let tempResultJobsModel = Mapper<ResultJobsModel>().map(JSON: dicResponse)!
+            itemsResultJobModel += tempResultJobsModel.items ?? []
+            
+            if (tempResultJobsModel.items?.count ?? 0) > 0 {
+                self.tableView.reloadData()
+                fetchData = false
+            }
+        case 2:
+            let tempResult = Mapper<ResultJobsModel>().map(JSON: dicResponse)!
+            if flagFilter {
+                itemsResultJobModel.removeAll()
+            }
+            itemsResultJobModel += tempResult.items ?? []
+            
             self.tableView.reloadData()
-            fetchData = false
-
+            
+        default:
+            print("default")
         }
     }
     

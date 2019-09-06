@@ -55,5 +55,4 @@ class LandingEmployerController: UIViewController {
         let navigation = UINavigationController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
 }

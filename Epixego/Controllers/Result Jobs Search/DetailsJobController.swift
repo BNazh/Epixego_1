@@ -25,7 +25,9 @@ class DetailsJobController: UIViewController {
     @IBOutlet fileprivate weak var saveBtn        : UIButton!
     
     lazy var jobsResultSourceModel = ItemsResultJobsModel()
+    lazy var changeStatusModel     = ChangeStatusModel()
     lazy var http = HTTPController()
+    var tag: Int?
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +58,33 @@ class DetailsJobController: UIViewController {
         descriptionLbl.text  = jobsResultSourceModel.source?.generalInfo?.jobDescription ?? ""
         
         experienceLbl.text   =  jobsResultSourceModel.source?.experience?.level ?? ""
+        
+//        check if applied or not
+        if jobsResultSourceModel.source?.candidates?.first?.flag == "applied" {
+            applyBtn.setTitle("applied", for: .normal)
+            applyBtn.isUserInteractionEnabled = false
+            saveBtn.isUserInteractionEnabled = false
+        } else if jobsResultSourceModel.source?.candidates?.first?.flag == "saved" {
+            saveBtn.setTitle("saved", for: .normal)
+            saveBtn.isUserInteractionEnabled = false
+        }
     }
     
+    func updateResultApply() {
+        
+        if changeStatusModel.shareds?.successful == 1 && changeStatusModel.shareds?.failed == 0 && tag == 1 {
+            print("applied")
+            self.displayAlertSuccess(title: "Applied", message: "Thank you for applying this job")
+            applyBtn.setTitle("Applied", for: .normal)
+            
+        } else if changeStatusModel.shareds?.successful == 1 && changeStatusModel.shareds?.failed == 0 && tag == 2 {
+            self.displayAlertSuccess(title: "saved", message: "Thank you for saving this job")
+            saveBtn.setTitle("saved", for: .normal)
+        }
+        saveBtn.isUserInteractionEnabled = false
+        applyBtn.isUserInteractionEnabled = false
+
+    }
     
     @IBAction func applyBtn(sender: UIButton) {
         let status = EnumsConstants.JobStatus.applied
@@ -75,6 +102,8 @@ class DetailsJobController: UIViewController {
          "jobId": "7CzpSGwBGizRVg2qakUn"
          }
          */
+        tag = 1
+        http.put(path: APIConstants.baseURl + APIConstants.changeStatusURL , parameter: params, tag: tag ?? 0)
     }
     
     @IBAction func saveBtn(sender: UIButton) {
@@ -84,5 +113,7 @@ class DetailsJobController: UIViewController {
                                         "state": status.rawValue,
                                         "profiletype": "STUDENT",
                                         "jobId": jobsResultSourceModel.id ?? ""]
+        tag = 2
+        http.put(path: APIConstants.baseURl + APIConstants.changeStatusURL, parameter: params, tag: tag ?? 0)
     }
 }

@@ -11,6 +11,7 @@ import SwiftValidator
 import Foundation
 import iOSDropDown
 import SideMenu
+import MobileCoreServices
 
 class SecondStepSignUpController: UIViewController {
 
@@ -22,7 +23,7 @@ class SecondStepSignUpController: UIViewController {
     @IBOutlet fileprivate weak var locationTxt   : UITextField!
     @IBOutlet fileprivate weak var levelTxt      : DropDown!
     @IBOutlet fileprivate weak var submitBtn     : UIButton!
-    @IBOutlet fileprivate weak var profilePicLbl : UILabel!
+    @IBOutlet weak var profilePicLbl : UILabel!
     @IBOutlet fileprivate weak var resumeLbl     : UILabel!
     
     @IBOutlet fileprivate weak var firstNameErrorLbl : UILabel!
@@ -36,11 +37,12 @@ class SecondStepSignUpController: UIViewController {
     var sourceModel = SourceModel()
     var generalInformation = GeneralInfoModel()
     lazy var signUpResposeModel = SignUpResposeModel()
+    lazy var statusUploadModel = StatusUploadModel()
     
     var levelEnum = EnumsConstants.enumLevel.HighSchool
 
     lazy var http = HTTPController()
-
+    var imageProfileString = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,7 @@ class SecondStepSignUpController: UIViewController {
         CustomDesign.setBackgroundImage(view: self.view)
         validation()
     }
-    
+
     func setupDropDownList() {
         levelArray = ["High School", "College", "Granduate School", "Early Prfessional(<7yrs exp)", "advanced Professional(>7yrs exp)"]
         
@@ -118,15 +120,29 @@ class SecondStepSignUpController: UIViewController {
     }
    
     @IBAction func uploadPrfilePicBtn(sender: UIButton) {
-        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            print("Button capture")
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     @IBAction func uploadResumeBtn(sender: UIButton) {
-        
+        // doesn't work, we need app store account
+        let types = [kUTTypePDF, kUTTypeText, kUTTypeRTF, kUTTypeSpreadsheet]
+
+        let importMenu = UIDocumentMenuViewController(documentTypes: types as [String], in: .import)
+        importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+        self.present(importMenu, animated: true, completion: nil)
     }
     
     @IBAction func submitBtn(sender: UIButton) {
-     validator.validate(self)
+        validator.validate(self)
     }
     
     func goToVerficationView() {
@@ -273,4 +289,49 @@ extension SecondStepSignUpController: UITextFieldDelegate {
         return true
     }
     
+}
+
+extension SecondStepSignUpController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
+
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            print(image.description)
+            
+            self.dismiss(animated: true) {
+                self.http.uploadImage(path: "\(APIConstants.baseURl)\(APIConstants.uploadImageURL)", image: image, tag: 2)
+            }
+        }
+
+        
+    }
+}
+
+extension SecondStepSignUpController: UIDocumentMenuDelegate, UIDocumentPickerDelegate {
+    
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let myURL = urls.first else {
+            return
+        }
+        print("import result : \(myURL)")
+    }
+    
+    
+    public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
+        documentPicker.delegate = self
+        present(documentPicker, animated: true, completion: nil)
+    }
+    
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print("view was cancelled")
+        dismiss(animated: true, completion: nil)
+    }
+
 }

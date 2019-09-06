@@ -38,7 +38,7 @@ class SignUpController: UIViewController {
         
         passwordTxt.text = "12345678"
         confirmPasswordTxt.text = "12345678"
-        emailTxt.text = "mmm@gmail.com"
+        emailTxt.text = "yedrafisto@desoz.com"
         
         setupView()
     }

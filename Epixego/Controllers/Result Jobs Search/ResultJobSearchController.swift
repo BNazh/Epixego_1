@@ -11,13 +11,6 @@ import PopOverMenu
 import Foundation
 import Alamofire
 
-enum JobStatus: String {
-    case applied
-    case contacted
-    case saved
-    case rejected
-}
-
 class ResultJobSearchController: UIViewController, UIAdaptivePresentationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,12 +20,13 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
     lazy var  itemsResultJobModel = [ItemsResultJobsModel]()
 
     lazy var http = HTTPController()
-    var jobStatus = JobStatus.applied
-
+    var jobStatus = EnumsConstants.JobStatus.applied
+    
     var keywordValue: String = String()
     fileprivate var size = 10
     fileprivate var from = 1 // number of page
     var fetchData: Bool = false
+    var flagFilter: Bool = false
     var totalItems = Int()
     
     lazy var popOverViewController = PopOverViewController()
@@ -44,7 +38,6 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
         itemsResultJobModel = resultJobsModel.items ?? []
         totalItems          = resultJobsModel.total ?? 0
         setupView()
-
     }
 
     fileprivate func setupView() {
@@ -52,61 +45,6 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.footerView(forSection: .max)
         setupPopOverView()
-        
-        //************//
-        
-//        GetAction()
-
-    }
-
-    func GetAction() {
-
-       /* let headers = [
-            "Content-Type": "application/json"
-        ]
-        let parameters = [
-            "state": "applied",
-            "start": "0",
-            "size": "10"
-            ] as [String : Any]
-        do {
-        let postData = try JSONSerialization.data(withJSONObject: parameters, options: [])
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "http://13.56.79.215:3000/epixego/findJobs4Candidate/nCxSRWwBGizRVg2qRDP0")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = postData as Data
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                print(httpResponse)
-            }
-        })
-        
-        dataTask.resume()
-        } catch {
-            print("error")
-        }*/
-        
-        let parameters = [
-            "state": "applied",
-            "start": "0",
-            "size": "10"
-            ] as [String : Any]
-        
-        var request = "http://13.56.79.215:3000/epixego/findJobs4Candidate/nCxSRWwBGizRVg2qRDP0"
-        
-        
-        Alamofire.request(request, method: .get, parameters: parameters, encoding: JSONEncoding.default).responseJSON() {(response) in
-        
-        print(response)
-    }
     }
     
     func reFillData() {
@@ -147,26 +85,25 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
             default:
                 break
             }
-            
+            self.flagFilter = true
             self.filterData()
         };
     }
     
-    fileprivate func filterData() {
+    internal func filterData() {
         let statusResult: String = jobStatus.rawValue
-
         let param = [
             "state": statusResult,
             "start": "0",
             "size": "10"
-            ] as [String : Any]
+            ]
         
         let userId = UserDefaultDB.shared.getUserDefaultString(key: DBLocalKeys.userId)
         let fullUrl: String = "\(APIConstants.baseURl)\(APIConstants.searchJobStatusURL)\(userId)"
-        http.get(path: fullUrl, parameter: param, tag: 1)
+        http.post(path: fullUrl, parameter: param, tag: 2)
     }
     
-    @IBAction fileprivate func filterBtn(sender: UIBarButtonItem) {
+    @IBAction private func filterBtn(sender: UIBarButtonItem) {
 
         popOverViewController.presentationController?.delegate = self
         popOverViewController.popoverPresentationController?.barButtonItem = sender
@@ -176,7 +113,6 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
-    
     
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none

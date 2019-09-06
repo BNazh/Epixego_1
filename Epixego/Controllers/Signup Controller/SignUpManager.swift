@@ -10,22 +10,27 @@ import Foundation
 import ObjectMapper
 
 extension SecondStepSignUpController: HttpControllerDelegate {
-    func receivedResponseArray(_ dicResponse: [String : Any], tag: Int) {
-        print(dicResponse)
+    func receivedResponseArray(_ dicResponse: [String: Any], tag: Int) {
         
-        signUpResposeModel = Mapper<SignUpResposeModel>().map(JSON: dicResponse)!
-      
-        UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.token ?? "", key: DBLocalKeys.token)
-        UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.userId ?? "", key: DBLocalKeys.userId)
-        UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.email ?? "", key: DBLocalKeys.email)
-
-        goToVerficationView()
-        
+        switch tag {
+        case 1:
+            signUpResposeModel = Mapper<SignUpResposeModel>().map(JSON: dicResponse)!
+            
+            UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.token ?? "", key: DBLocalKeys.token)
+            UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.userId ?? "", key: DBLocalKeys.userId)
+            UserDefaultDB.shared.addUserDefaultString(value: signUpResposeModel.email ?? "", key: DBLocalKeys.email)
+            
+            goToVerficationView()
+        case 2:
+            statusUploadModel = Mapper<StatusUploadModel>().map(JSON: dicResponse)!
+            imageProfileString = statusUploadModel.filename ?? ""
+            profilePicLbl.text = imageProfileString
+        default:
+            print("defaults")
+        }
     }
     
     func receivedErrorWithMessage(_ message: String) {
         print("error")
     }
-    
-    
 }

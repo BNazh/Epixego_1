@@ -21,7 +21,8 @@ class HTTPController  {
     
     var delegate: HttpControllerDelegate?
     
-    fileprivate let noNetworkMsg: String = "Please check your internet connection or try again later"
+    private let noNetworkMsg: String = "Please check your internet connection or try again later"
+    private let somethingWrong: String = "Something error please try again"
     
     func post(path: String, parameter: Parameters, tag: Int) {
         print("full url: \(path) \(parameter)")
@@ -37,8 +38,9 @@ class HTTPController  {
         }
         
         SVProgressHUD.show()
-        
-        Alamofire.request(path, method: .post, parameters: parameter).validate().responseJSON {
+        let header: [String: String] = ["Content-Type": "application/json"]
+
+        Alamofire.request(path, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: header).validate().responseJSON {
             (response) in
             print(response.result.value ?? "")
             SVProgressHUD.dismiss()
@@ -51,7 +53,7 @@ class HTTPController  {
                 }
                 
             case .failure(_):
-                self.delegate?.receivedErrorWithMessage("Something error please try again")
+                self.delegate?.receivedErrorWithMessage(self.somethingWrong)
             }
         }
     }
@@ -71,11 +73,9 @@ class HTTPController  {
         
         SVProgressHUD.show()
         
-        let headers = [
-            "Content-Type": "application/json"
-        ]
+        let header: [String: String] = ["Content-Type": "application/json"]
 
-        Alamofire.request(path, method: .get, parameters: parameter, headers: headers).validate().responseJSON {
+        Alamofire.request(path, method: .get, parameters: parameter, headers: header).validate().responseJSON {
             (response) in
             print(response.result.value ?? "")
             SVProgressHUD.dismiss()
@@ -88,7 +88,88 @@ class HTTPController  {
                 }
                 
             case .failure(_):
-                self.delegate?.receivedErrorWithMessage("Something error please try again")
+                self.delegate?.receivedErrorWithMessage(self.somethingWrong)
+            }
+        }
+    }
+    
+    func put(path: String, parameter: Parameters, tag: Int) {
+        print("path:\(path) param:\(parameter)")
+        
+        if !Reachability.isConnectedToNetwork() {
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                topController.displayAlertFailed(title: "Network Error", message: noNetworkMsg)
+            }
+            return
+        }
+        
+        SVProgressHUD.show()
+        let header: [String: String] = ["Content-Type": "application/json"]
+        
+        Alamofire.request(path, method: .put, parameters: parameter, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+            print(response.result.value ?? "")
+            
+            SVProgressHUD.dismiss()
+            
+            switch response.result {
+            case .success(_):
+                if let valueArray = response.result.value as? [String: Any] {
+                    self.delegate?.receivedResponseArray(valueArray, tag: tag)
+                    return
+                }
+            case .failure(_):
+                print(response.error)
+                self.delegate?.receivedErrorWithMessage(self.somethingWrong)
+            }
+        }
+    }
+    
+    func uploadImage(path: String, image: UIImage, tag: Int) {
+
+        if !Reachability.isConnectedToNetwork() {
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                topController.displayAlertFailed(title: "Network Error", message: noNetworkMsg)
+            }
+            return
+        }
+        
+        SVProgressHUD.show()
+        let imgData = image.jpegData(compressionQuality: 0.1)
+        
+        let parameters = ["name": "file"]
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imgData!, withName: "file",fileName: "file.jpg", mimeType: "image/jpg")
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        } , to:path, method: .post)
+        { (result) in
+            SVProgressHUD.dismiss()
+
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    print("Upload Progress: \(progress.fractionCompleted)")
+                })
+                
+                upload.responseJSON { response in
+                    if let valueArray = response.result.value as? [String: Any] {
+                        self.delegate?.receivedResponseArray(valueArray, tag: tag)
+                        return
+                    }
+                }
+                
+            case .failure(let encodingError):
+                print(encodingError)
+                self.delegate?.receivedErrorWithMessage(self.somethingWrong)
             }
         }
     }

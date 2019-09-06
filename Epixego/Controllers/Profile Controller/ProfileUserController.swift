@@ -38,61 +38,31 @@ class ProfileUserController: UIViewController {
         fillData()
     }
     
-    fileprivate func fillData() {
-        nameLbl.text = loginModel.source?.generalInfo?.name ?? ""
-     
-       
-        let imageName = loginModel.source?.generalInfo?.profilePicture ?? ""
-        
-        let url: URL = URL(string: imageName)!
-        
-//        let url = URL(fileURLWithPath: imageName)
-        
-        if let theProfileImageUrl = URL(string: imageName) {
-            do {
-                let imageData = try Data(contentsOf: theProfileImageUrl as URL)
-                profileImg.image = UIImage(data: imageData)
-            } catch {
-                print("Unable to load data: \(error)")
-            }
-        }
-
-        
-        let imageData = NSData(contentsOf: url)
-        
-//        let image = UIImage(data: imageData as! Data)
-        
-        
-        
-        profileImg.image = load(fileName: imageName)
-   
-    }
-    
-    private func load(fileName: String) -> UIImage? {
-        let fileURL = documentsUrl.appendingPathComponent(fileName)
-        
-        do {
-            let imageData = try Data(contentsOf: fileURL)
-            return UIImage(data: imageData)
-        } catch {
-            print("Error loading image : \(error)")
-        }
-        return nil
-    }
-    
     func setupView() {
         setupChart()
         
         CustomDesign.setBackgroundImage(view: self.view)
         
-        profileImg.layer.cornerRadius = profileImg.frame.width / 2
+        profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg.layer.masksToBounds = true
         
         let nib = UINib(nibName: "ProfileTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
-
+        
         tableView.estimatedRowHeight = 50
+    }
+    
+    fileprivate func fillData() {
+        profileImg.sd_cancelCurrentImageLoad()
+        nameLbl.text = loginModel.source?.generalInfo?.name ?? ""
+     
+        let imageName = loginModel.source?.generalInfo?.profilePicture ?? ""
 
+        let fullStr = APIConstants.baseURl + APIConstants.uploadURL + imageName
+        
+        
+        
+        profileImg?.sd_setImage(with: URL(string: fullStr), placeholderImage: UIImage.init(named: "avatarBlack-icon"), options: .continueInBackground, completed: nil)
     }
     
     func setupChart()  {
@@ -134,10 +104,7 @@ class ProfileUserController: UIViewController {
         chartMain.addDataSet(chartDataSet)
         skillsChart.animate(yAxisDuration: 1.2)
         skillsChart.data = chartMain
-        
     }
-    
-
 }
 
 

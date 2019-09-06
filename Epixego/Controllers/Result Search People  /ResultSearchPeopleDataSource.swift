@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 enum enumLevel: String {
     case HighSchool = "hs"
@@ -29,8 +30,14 @@ extension ResultSearchPeopleController: UITableViewDataSource {
         
         cell.nameLbl.text     = itemResultPeopleModel[indexPath.row].source?.generalInfo?.name ?? ""
         let level             = itemResultPeopleModel[indexPath.row].source?.generalInfo?.level ?? ""
+        
+        let profileImg = itemResultPeopleModel[indexPath.row].source?.generalInfo?.profilePicture ?? ""
+        
+        let fullStr = APIConstants.baseURl + APIConstants.uploadURL + profileImg
+        print(fullStr)
+        cell.profileImg?.sd_setImage(with: URL(string: fullStr), placeholderImage: UIImage.init(named: "avatarBlack-icon"), options: .continueInBackground, completed: nil)
+        
         var levelStr = ""
-
         switch level {
         case "hs", "col":
             levelStr = "Student"

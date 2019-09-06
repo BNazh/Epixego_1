@@ -34,8 +34,10 @@ extension ResultJobSearchController: UITableViewDataSource {
             return
         }
         if offsetY > contentHeight - scrollView.frame.height {
-            if !fetchData  {
+            if !fetchData && !flagFilter  {
                 reFillData()
+            } else if flagFilter && !fetchData {
+                filterData()
             }
         }
     }

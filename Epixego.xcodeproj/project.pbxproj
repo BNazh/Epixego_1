@@ -64,7 +64,15 @@
 		847A577522E662AF009C1BB7 /* ItemsSearchPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577422E662AF009C1BB7 /* ItemsSearchPeopleModel.swift */; };
 		847A577722E66594009C1BB7 /* JobsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577622E66594009C1BB7 /* JobsModel.swift */; };
 		847A577A22E667BB009C1BB7 /* PeopleSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577922E667BB009C1BB7 /* PeopleSearchManager.swift */; };
+		848637A7230C766D00D62FBE /* ChangeStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637A6230C766D00D62FBE /* ChangeStatusModel.swift */; };
+		848637A9230C784100D62FBE /* ShardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637A8230C784100D62FBE /* ShardsModel.swift */; };
+		848637AB230C852D00D62FBE /* CandidateStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637AA230C852D00D62FBE /* CandidateStateModel.swift */; };
+		8487FC8723170D9F00CE691C /* StatusUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FC8623170D9F00CE691C /* StatusUploadModel.swift */; };
+		8487FC8B2320574600CE691C /* BlogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487FC8A2320574600CE691C /* BlogController.swift */; };
 		8488414C2303701B0091258D /* DetailsJobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488414B2303701B0091258D /* DetailsJobManager.swift */; };
+		84918CFD23216BCB00DE4810 /* ContactUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84918CFC23216BCB00DE4810 /* ContactUsController.swift */; };
+		84918CFF232184A200DE4810 /* ContactUsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84918CFE232184A200DE4810 /* ContactUsManager.swift */; };
+		84918D012321877200DE4810 /* ContactUsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84918D002321877200DE4810 /* ContactUsModel.swift */; };
 		84ADC7592305BDFA00A24835 /* LandingEmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADC7582305BDFA00A24835 /* LandingEmployeeManager.swift */; };
 		84B21F7422E906F2006FC85A /* DetailsPeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B21F7322E906F2006FC85A /* DetailsPeopleController.swift */; };
 		84D87B8D22EA0E9100C1A23E /* SkillsChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D87B8C22EA0E9100C1A23E /* SkillsChartView.xib */; };
@@ -188,7 +196,16 @@
 		847A577422E662AF009C1BB7 /* ItemsSearchPeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsSearchPeopleModel.swift; sourceTree = "<group>"; };
 		847A577622E66594009C1BB7 /* JobsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsModel.swift; sourceTree = "<group>"; };
 		847A577922E667BB009C1BB7 /* PeopleSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchManager.swift; sourceTree = "<group>"; };
+		848637A6230C766D00D62FBE /* ChangeStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusModel.swift; sourceTree = "<group>"; };
+		848637A8230C784100D62FBE /* ShardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShardsModel.swift; sourceTree = "<group>"; };
+		848637AA230C852D00D62FBE /* CandidateStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateStateModel.swift; sourceTree = "<group>"; };
+		8487FC8623170D9F00CE691C /* StatusUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusUploadModel.swift; sourceTree = "<group>"; };
+		8487FC8823173A0800CE691C /* Epixego.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Epixego.entitlements; sourceTree = "<group>"; };
+		8487FC8A2320574600CE691C /* BlogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogController.swift; sourceTree = "<group>"; };
 		8488414B2303701B0091258D /* DetailsJobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJobManager.swift; sourceTree = "<group>"; };
+		84918CFC23216BCB00DE4810 /* ContactUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsController.swift; sourceTree = "<group>"; };
+		84918CFE232184A200DE4810 /* ContactUsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsManager.swift; sourceTree = "<group>"; };
+		84918D002321877200DE4810 /* ContactUsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsModel.swift; sourceTree = "<group>"; };
 		84ADC7582305BDFA00A24835 /* LandingEmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingEmployeeManager.swift; sourceTree = "<group>"; };
 		84B21F7322E906F2006FC85A /* DetailsPeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPeopleController.swift; sourceTree = "<group>"; };
 		84D87B8C22EA0E9100C1A23E /* SkillsChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkillsChartView.xib; sourceTree = "<group>"; };
@@ -283,6 +300,7 @@
 		8416BA1D22D01600003EEE8A /* Epixego */ = {
 			isa = PBXGroup;
 			children = (
+				8487FC8823173A0800CE691C /* Epixego.entitlements */,
 				84DDB5E622DE577500F0104E /* Extensions */,
 				84DDB5BC22D8021900F0104E /* Model */,
 				84DDB5AD22D6ADEF00F0104E /* Helper */,
@@ -326,7 +344,9 @@
 				84DDB5B722D7F9FD00F0104E /* Login Controller */,
 				84DDB5B422D7B1F500F0104E /* Signup Controller */,
 				8440EEC722EBB74200850BAD /* Questions Landing Controller */,
-				84E55C5C22FCD02200FCAE5C /* New Group */,
+				84E55C5C22FCD02200FCAE5C /* Landing Employer Controller */,
+				8487FC892320573200CE691C /* Blog Controller */,
+				84918CFB23216BB100DE4810 /* Contact Us */,
 				8416BA1E22D01600003EEE8A /* AppDelegate.swift */,
 				844C391022D50D6600CC426E /* SideMenuController.swift */,
 			);
@@ -452,6 +472,23 @@
 			path = "Landing Controller";
 			sourceTree = "<group>";
 		};
+		8487FC892320573200CE691C /* Blog Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8487FC8A2320574600CE691C /* BlogController.swift */,
+			);
+			path = "Blog Controller";
+			sourceTree = "<group>";
+		};
+		84918CFB23216BB100DE4810 /* Contact Us */ = {
+			isa = PBXGroup;
+			children = (
+				84918CFC23216BCB00DE4810 /* ContactUsController.swift */,
+				84918CFE232184A200DE4810 /* ContactUsManager.swift */,
+			);
+			path = "Contact Us";
+			sourceTree = "<group>";
+		};
 		84D87B8B22EA0E7600C1A23E /* SkillsChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +555,11 @@
 				8459365322F0D0FB00B1BA37 /* GeneralInfoResultJobsModel.swift */,
 				8459365122F0CDEC00B1BA37 /* JobsResultSourceModel.swift */,
 				8459365522F0D3ED00B1BA37 /* ExperienceModel.swift */,
+				848637A6230C766D00D62FBE /* ChangeStatusModel.swift */,
+				848637AA230C852D00D62FBE /* CandidateStateModel.swift */,
+				848637A8230C784100D62FBE /* ShardsModel.swift */,
+				8487FC8623170D9F00CE691C /* StatusUploadModel.swift */,
+				84918D002321877200DE4810 /* ContactUsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,13 +585,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		84E55C5C22FCD02200FCAE5C /* New Group */ = {
+		84E55C5C22FCD02200FCAE5C /* Landing Employer Controller */ = {
 			isa = PBXGroup;
 			children = (
 				84E55C5D22FCD05100FCAE5C /* LandingEmployerController.swift */,
 				84ADC7582305BDFA00A24835 /* LandingEmployeeManager.swift */,
 			);
-			path = "New Group";
+			path = "Landing Employer Controller";
 			sourceTree = "<group>";
 		};
 		AD2E44545C1154BF08D07C53 /* Frameworks */ = {
@@ -640,6 +682,11 @@
 				TargetAttributes = {
 					8416BA1A22D01600003EEE8A = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					8416BA2E22D01601003EEE8A = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -760,6 +807,7 @@
 				842A442322F3A28A00FCDD5A /* DetailsJobController.swift in Sources */,
 				84DDB5BE22D8025400F0104E /* LoginModel.swift in Sources */,
 				84DDB5CC22D937A900F0104E /* TagsNameModel.swift in Sources */,
+				848637A7230C766D00D62FBE /* ChangeStatusModel.swift in Sources */,
 				842A442122F3923300FCDD5A /* ResultSearchPeopleManager.swift in Sources */,
 				84DDB5E822DE579900F0104E /* DisplayAlertMessageExtension.swift in Sources */,
 				8469B5A422D6856800EF7C0F /* ConstantControllers.swift in Sources */,
@@ -770,17 +818,21 @@
 				844C390E22D3F74A00CC426E /* InternshipContainerController.swift in Sources */,
 				84DDB5E222DE573600F0104E /* FailedAlertVC.swift in Sources */,
 				8427E0A122E24A5A001A5217 /* ProfileTableViewCell.swift in Sources */,
+				84918CFF232184A200DE4810 /* ContactUsManager.swift in Sources */,
 				8440EECB22EBB81900850BAD /* QuestionsLandingDelegate.swift in Sources */,
 				8459365022F0CD4900B1BA37 /* ItemsResultJobsModel.swift in Sources */,
 				84DDB5E122DE573600F0104E /* CPAlertVC.swift in Sources */,
+				848637A9230C784100D62FBE /* ShardsModel.swift in Sources */,
 				8459364322F0C26800B1BA37 /* ResultJobSearchController.swift in Sources */,
 				8459364C22F0C95C00B1BA37 /* ResultJobsDelegateController.swift in Sources */,
 				84B21F7422E906F2006FC85A /* DetailsPeopleController.swift in Sources */,
 				8459363722EF649D00B1BA37 /* QuestionsModel.swift in Sources */,
 				84DDB5D822DD345800F0104E /* SignUpResposeModel.swift in Sources */,
+				848637AB230C852D00D62FBE /* CandidateStateModel.swift in Sources */,
 				84DDB5D022D93C9B00F0104E /* SchoolInfoModel.swift in Sources */,
 				846C644022D53FA8000382AA /* ExtensionColor.swift in Sources */,
 				84DDB5CE22D938FB00F0104E /* PositionInformationModel.swift in Sources */,
+				8487FC8B2320574600CE691C /* BlogController.swift in Sources */,
 				84DDB5C622D9123500F0104E /* UserDefaultDB.swift in Sources */,
 				847A577A22E667BB009C1BB7 /* PeopleSearchManager.swift in Sources */,
 				8459363E22EF6FD600B1BA37 /* ExpandableHeaderView.swift in Sources */,
@@ -819,6 +871,7 @@
 				84491C1222D3DCB200B9F545 /* LoginController.swift in Sources */,
 				84DDB5B322D7961500F0104E /* HTTPController.swift in Sources */,
 				84DDB5B922D7FA2C00F0104E /* LoginManager.swift in Sources */,
+				84918D012321877200DE4810 /* ContactUsModel.swift in Sources */,
 				847A576A22E621B3009C1BB7 /* ResultSearchPeopleDataSource.swift in Sources */,
 				84DDB5EC22DE923200F0104E /* CustomDesign.swift in Sources */,
 				8459364A22F0C91800B1BA37 /* ResultJobsDataSourceController.swift in Sources */,
@@ -829,6 +882,8 @@
 				84E55C5E22FCD05100FCAE5C /* LandingEmployerController.swift in Sources */,
 				8440EEC922EBB80A00850BAD /* QuestionsLandingDataSource.swift in Sources */,
 				8459363B22EF6C6E00B1BA37 /* QuestionsCell.swift in Sources */,
+				8487FC8723170D9F00CE691C /* StatusUploadModel.swift in Sources */,
+				84918CFD23216BCB00DE4810 /* ContactUsController.swift in Sources */,
 				8469B59C22D64D6C00EF7C0F /* SignUpController.swift in Sources */,
 				84D87B8F22EA23B700C1A23E /* DetailsPeopleDataSourceController.swift in Sources */,
 				84D87B9122EA23EC00C1A23E /* DetailsPeopleDelegateController.swift in Sources */,
@@ -1011,6 +1066,7 @@
 			baseConfigurationReference = DF4F85060071C45B8A6CE516 /* Pods-Epixego.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Epixego/Epixego.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NJ44ZNG4WX;
@@ -1033,6 +1089,7 @@
 			baseConfigurationReference = 5F91FBD2918E4ADC48B16B27 /* Pods-Epixego.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Epixego/Epixego.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NJ44ZNG4WX;

@@ -11,7 +11,9 @@ import ObjectMapper
 
 extension DetailsJobController: HttpControllerDelegate {
     func receivedResponseArray(_ dicResponse: [String: Any], tag: Int) {
-        
+
+            changeStatusModel = Mapper<ChangeStatusModel>().map(JSON: dicResponse)!
+            updateResultApply()
     }
     
     func receivedErrorWithMessage(_ message: String) {

@@ -24,7 +24,7 @@ class FailedAlertVC: CPAlertVC {
     }
     
     func showCheckImage(_ isCheck: Bool) {
-        imgLogo = (isCheck) ? #imageLiteral(resourceName: "failed-icon") : #imageLiteral(resourceName: "ic_music")
+        imgLogo = (isCheck) ? UIImage.init(named: "failed-icon") : UIImage.init(named: "")
     }
     
     override func configUI() {

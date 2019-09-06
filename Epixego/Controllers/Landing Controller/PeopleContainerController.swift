@@ -40,7 +40,10 @@ class PeopleContainerController: UIViewController {
             return
         }
         nameText = nameOfPeople
-        http.get(path: "\(APIConstants.baseURl + APIConstants.searchPeopleURL)\(nameOfPeople)", parameter: [:], tag: 1)
+        
+        let param: [String: String] = ["pplType": "roleModel", "keyword": nameText, "userId": UserDefaultDB.shared.getUserDefaultString(key: DBLocalKeys.userId)]
+
+        http.post(path: "\(APIConstants.baseURl + APIConstants.findPeopleURL)", parameter: param, tag: 1)        
     }
     
     func goToResultPeopleController() {

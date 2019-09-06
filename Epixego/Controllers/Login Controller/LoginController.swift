@@ -33,7 +33,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailTxt.text = "cugusihif@freemaillink.com"
+        emailTxt.text = "mo3ad_y@hotmail.com"
         passwordTxt.text = "8f7d192c024599846802cad3a7d71e219c19a42ae400421dd5204963ad9c8235edce03aceb5a49200299c4b0419893bd35b7ab79cd77286f37f4b56599a19267"
         
         http.delegate = self

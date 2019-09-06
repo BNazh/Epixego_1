@@ -17,7 +17,7 @@ class SideMenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataArray = ["Search Internships", "Role Models", "Blog", "Login", "SIGN UP"]
+        dataArray = ["Search Internships", "Role Models", "Blog", "Login", "SIGN UP", "Contact Us"]
         
         let nib = UINib(nibName: "SideMenuCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "cell")
@@ -26,7 +26,6 @@ class SideMenuController: UIViewController {
     
     
     func goToController(contr: String) {
-
         let controller = self.storyboard?.instantiateViewController(withIdentifier: contr) 
         self.navigationController?.pushViewController(controller!, animated: true)
     }
@@ -47,9 +46,7 @@ extension SideMenuController: UITableViewDataSource {
         
         cell?.nameLbl.text = dataArray[indexPath.row]
         
-        
         return cell!
-
     }
 }
 
@@ -64,16 +61,18 @@ extension SideMenuController: UITableViewDelegate {
             print("Role")
         case 2:
             print("blog")
+            goToController(contr: ConstantControllers.blogController)
         case 3:
-            print("Login")
-            
+            print("Login")            
             goToController(contr: ConstantControllers.loginVC)
         case 4:
             print("sign up")
             goToController(contr: ConstantControllers.signUpVC)
+        case 5:
+            print("contact us")
+            goToController(contr: ConstantControllers.contactUsVC)
         default:
             print("default")
         }
     }
 }
-
