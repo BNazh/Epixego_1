@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840C39FB232969EA00B296E3 /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840C39FA232969EA00B296E3 /* ProfileStoryboard.storyboard */; };
 		8416BA1F22D01600003EEE8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BA1E22D01600003EEE8A /* AppDelegate.swift */; };
 		8416BA2122D01600003EEE8A /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BA2022D01600003EEE8A /* LandingController.swift */; };
 		8416BA2422D01600003EEE8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416BA2222D01600003EEE8A /* Main.storyboard */; };
@@ -64,6 +65,8 @@
 		847A577522E662AF009C1BB7 /* ItemsSearchPeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577422E662AF009C1BB7 /* ItemsSearchPeopleModel.swift */; };
 		847A577722E66594009C1BB7 /* JobsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577622E66594009C1BB7 /* JobsModel.swift */; };
 		847A577A22E667BB009C1BB7 /* PeopleSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847A577922E667BB009C1BB7 /* PeopleSearchManager.swift */; };
+		8483F03C23298C560075ECEF /* AboutMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483F03B23298C560075ECEF /* AboutMeController.swift */; };
+		8483F03E232990E80075ECEF /* AboutMeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483F03D232990E80075ECEF /* AboutMeManager.swift */; };
 		848637A7230C766D00D62FBE /* ChangeStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637A6230C766D00D62FBE /* ChangeStatusModel.swift */; };
 		848637A9230C784100D62FBE /* ShardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637A8230C784100D62FBE /* ShardsModel.swift */; };
 		848637AB230C852D00D62FBE /* CandidateStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848637AA230C852D00D62FBE /* CandidateStateModel.swift */; };
@@ -80,6 +83,8 @@
 		84D87B9122EA23EC00C1A23E /* DetailsPeopleDelegateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D87B9022EA23EC00C1A23E /* DetailsPeopleDelegateController.swift */; };
 		84D87B9422EA253000C1A23E /* ExperienceDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D87B9222EA253000C1A23E /* ExperienceDetailsCell.swift */; };
 		84D87B9522EA253000C1A23E /* ExperienceDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D87B9322EA253000C1A23E /* ExperienceDetailsCell.xib */; };
+		84DD7398233AC5AC0048976C /* ProfessionalExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD7396233AC5AC0048976C /* ProfessionalExperienceCell.swift */; };
+		84DD7399233AC5AC0048976C /* ProfessionalExperienceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DD7397233AC5AC0048976C /* ProfessionalExperienceCell.xib */; };
 		84DDB5AF22D6AE2E00F0104E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDB5AE22D6AE2E00F0104E /* APIConstants.swift */; };
 		84DDB5B122D795B200F0104E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDB5B022D795B200F0104E /* Reachability.swift */; };
 		84DDB5B322D7961500F0104E /* HTTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDB5B222D7961500F0104E /* HTTPController.swift */; };
@@ -110,7 +115,36 @@
 		84DDB5EC22DE923200F0104E /* CustomDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDB5EB22DE923200F0104E /* CustomDesign.swift */; };
 		84E55C5B22FCCE1100FCAE5C /* EmployeerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E55C5A22FCCE1000FCAE5C /* EmployeerStoryboard.storyboard */; };
 		84E55C5E22FCD05100FCAE5C /* LandingEmployerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E55C5D22FCD05100FCAE5C /* LandingEmployerController.swift */; };
+		84EE90AD232C4127000327B6 /* TitlePositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90AB232C4127000327B6 /* TitlePositionCell.swift */; };
+		84EE90AE232C4127000327B6 /* TitlePositionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90AC232C4127000327B6 /* TitlePositionCell.xib */; };
+		84EE90B1232C42D6000327B6 /* ClubOrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90AF232C42D6000327B6 /* ClubOrganizationCell.swift */; };
+		84EE90B2232C42D6000327B6 /* ClubOrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90B0232C42D6000327B6 /* ClubOrganizationCell.xib */; };
+		84EE90B5232C448E000327B6 /* OtherInterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90B3232C448E000327B6 /* OtherInterestsCell.swift */; };
+		84EE90B6232C448E000327B6 /* OtherInterestsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90B4232C448E000327B6 /* OtherInterestsCell.xib */; };
+		84EE90B9232C455F000327B6 /* ActivitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90B7232C455F000327B6 /* ActivitiesCell.swift */; };
+		84EE90BA232C455F000327B6 /* ActivitiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90B8232C455F000327B6 /* ActivitiesCell.xib */; };
+		84EE90BD232C4612000327B6 /* GeneralProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90BB232C4612000327B6 /* GeneralProfileCell.swift */; };
+		84EE90BE232C4612000327B6 /* GeneralProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90BC232C4612000327B6 /* GeneralProfileCell.xib */; };
+		84EE90C1232C46BE000327B6 /* AddFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90BF232C46BE000327B6 /* AddFieldCell.swift */; };
+		84EE90C2232C46BE000327B6 /* AddFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE90C0232C46BE000327B6 /* AddFieldCell.xib */; };
+		84EE90C5232C4787000327B6 /* ExperienceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90C4232C4787000327B6 /* ExperienceController.swift */; };
+		84EE90C7232C479E000327B6 /* DataSourceExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE90C6232C479E000327B6 /* DataSourceExperience.swift */; };
+		84EE910323318BC2000327B6 /* ResponsePartialProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE910223318BC2000327B6 /* ResponsePartialProfileModel.swift */; };
+		84EE91052332CE55000327B6 /* GenomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE91042332CE55000327B6 /* GenomeModel.swift */; };
+		84EE91072332CF6C000327B6 /* MembersValuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE91062332CF6C000327B6 /* MembersValuesModel.swift */; };
+		84EE910B2332DCB5000327B6 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE910A2332DCB5000327B6 /* ProfileManager.swift */; };
+		84EE910D2332F11C000327B6 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE910C2332F11C000327B6 /* ProfileModel.swift */; };
+		84EEE0C9234277B500339BFE /* MinorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEE0C8234277B500339BFE /* MinorModel.swift */; };
 		84F442A022F24983005D2EEC /* ResultJobManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4429F22F24982005D2EEC /* ResultJobManagerController.swift */; };
+		84F8649E233D601D00407966 /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8649D233D601D00407966 /* ExperienceManager.swift */; };
+		84F864A0233EB79E00407966 /* DelegateExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8649F233EB79E00407966 /* DelegateExperience.swift */; };
+		84F864A223416CB900407966 /* GradSchoolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F864A123416CB900407966 /* GradSchoolController.swift */; };
+		84F864A623416E6600407966 /* DataSourceGradSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F864A523416E6600407966 /* DataSourceGradSchool.swift */; };
+		84F864A92341709600407966 /* GraduateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F864A72341709600407966 /* GraduateCell.swift */; };
+		84F864AA2341709600407966 /* GraduateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F864A82341709600407966 /* GraduateCell.xib */; };
+		84F864AC2341760600407966 /* DelegateGradSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F864AB2341760600407966 /* DelegateGradSchool.swift */; };
+		84F864AF23426A8300407966 /* GraduateSchoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F864AD23426A8200407966 /* GraduateSchoolCell.swift */; };
+		84F864B023426A8300407966 /* GraduateSchoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F864AE23426A8200407966 /* GraduateSchoolCell.xib */; };
 		B1D15C56B60750FCB059F606 /* Pods_Epixego.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DEB9BBAEC5F554284B31AC /* Pods_Epixego.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +167,7 @@
 
 /* Begin PBXFileReference section */
 		5F91FBD2918E4ADC48B16B27 /* Pods-Epixego.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epixego.release.xcconfig"; path = "Target Support Files/Pods-Epixego/Pods-Epixego.release.xcconfig"; sourceTree = "<group>"; };
+		840C39FA232969EA00B296E3 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
 		8416BA1B22D01600003EEE8A /* Epixego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epixego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416BA1E22D01600003EEE8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8416BA2022D01600003EEE8A /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
@@ -196,6 +231,8 @@
 		847A577422E662AF009C1BB7 /* ItemsSearchPeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsSearchPeopleModel.swift; sourceTree = "<group>"; };
 		847A577622E66594009C1BB7 /* JobsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsModel.swift; sourceTree = "<group>"; };
 		847A577922E667BB009C1BB7 /* PeopleSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSearchManager.swift; sourceTree = "<group>"; };
+		8483F03B23298C560075ECEF /* AboutMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeController.swift; sourceTree = "<group>"; };
+		8483F03D232990E80075ECEF /* AboutMeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeManager.swift; sourceTree = "<group>"; };
 		848637A6230C766D00D62FBE /* ChangeStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStatusModel.swift; sourceTree = "<group>"; };
 		848637A8230C784100D62FBE /* ShardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShardsModel.swift; sourceTree = "<group>"; };
 		848637AA230C852D00D62FBE /* CandidateStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateStateModel.swift; sourceTree = "<group>"; };
@@ -213,6 +250,8 @@
 		84D87B9022EA23EC00C1A23E /* DetailsPeopleDelegateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPeopleDelegateController.swift; sourceTree = "<group>"; };
 		84D87B9222EA253000C1A23E /* ExperienceDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceDetailsCell.swift; sourceTree = "<group>"; };
 		84D87B9322EA253000C1A23E /* ExperienceDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceDetailsCell.xib; sourceTree = "<group>"; };
+		84DD7396233AC5AC0048976C /* ProfessionalExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalExperienceCell.swift; sourceTree = "<group>"; };
+		84DD7397233AC5AC0048976C /* ProfessionalExperienceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfessionalExperienceCell.xib; sourceTree = "<group>"; };
 		84DDB5AE22D6AE2E00F0104E /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		84DDB5B022D795B200F0104E /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		84DDB5B222D7961500F0104E /* HTTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPController.swift; sourceTree = "<group>"; };
@@ -244,7 +283,36 @@
 		84DDB5EB22DE923200F0104E /* CustomDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesign.swift; sourceTree = "<group>"; };
 		84E55C5A22FCCE1000FCAE5C /* EmployeerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeerStoryboard.storyboard; sourceTree = "<group>"; };
 		84E55C5D22FCD05100FCAE5C /* LandingEmployerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingEmployerController.swift; sourceTree = "<group>"; };
+		84EE90AB232C4127000327B6 /* TitlePositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePositionCell.swift; sourceTree = "<group>"; };
+		84EE90AC232C4127000327B6 /* TitlePositionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitlePositionCell.xib; sourceTree = "<group>"; };
+		84EE90AF232C42D6000327B6 /* ClubOrganizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubOrganizationCell.swift; sourceTree = "<group>"; };
+		84EE90B0232C42D6000327B6 /* ClubOrganizationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClubOrganizationCell.xib; sourceTree = "<group>"; };
+		84EE90B3232C448E000327B6 /* OtherInterestsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherInterestsCell.swift; sourceTree = "<group>"; };
+		84EE90B4232C448E000327B6 /* OtherInterestsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherInterestsCell.xib; sourceTree = "<group>"; };
+		84EE90B7232C455F000327B6 /* ActivitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesCell.swift; sourceTree = "<group>"; };
+		84EE90B8232C455F000327B6 /* ActivitiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesCell.xib; sourceTree = "<group>"; };
+		84EE90BB232C4612000327B6 /* GeneralProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralProfileCell.swift; sourceTree = "<group>"; };
+		84EE90BC232C4612000327B6 /* GeneralProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralProfileCell.xib; sourceTree = "<group>"; };
+		84EE90BF232C46BE000327B6 /* AddFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFieldCell.swift; sourceTree = "<group>"; };
+		84EE90C0232C46BE000327B6 /* AddFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFieldCell.xib; sourceTree = "<group>"; };
+		84EE90C4232C4787000327B6 /* ExperienceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceController.swift; sourceTree = "<group>"; };
+		84EE90C6232C479E000327B6 /* DataSourceExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceExperience.swift; sourceTree = "<group>"; };
+		84EE910223318BC2000327B6 /* ResponsePartialProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsePartialProfileModel.swift; sourceTree = "<group>"; };
+		84EE91042332CE55000327B6 /* GenomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenomeModel.swift; sourceTree = "<group>"; };
+		84EE91062332CF6C000327B6 /* MembersValuesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersValuesModel.swift; sourceTree = "<group>"; };
+		84EE910A2332DCB5000327B6 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		84EE910C2332F11C000327B6 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		84EEE0C8234277B500339BFE /* MinorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinorModel.swift; sourceTree = "<group>"; };
 		84F4429F22F24982005D2EEC /* ResultJobManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultJobManagerController.swift; sourceTree = "<group>"; };
+		84F8649D233D601D00407966 /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
+		84F8649F233EB79E00407966 /* DelegateExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateExperience.swift; sourceTree = "<group>"; };
+		84F864A123416CB900407966 /* GradSchoolController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradSchoolController.swift; sourceTree = "<group>"; };
+		84F864A523416E6600407966 /* DataSourceGradSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceGradSchool.swift; sourceTree = "<group>"; };
+		84F864A72341709600407966 /* GraduateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduateCell.swift; sourceTree = "<group>"; };
+		84F864A82341709600407966 /* GraduateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraduateCell.xib; sourceTree = "<group>"; };
+		84F864AB2341760600407966 /* DelegateGradSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateGradSchool.swift; sourceTree = "<group>"; };
+		84F864AD23426A8200407966 /* GraduateSchoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraduateSchoolCell.swift; sourceTree = "<group>"; };
+		84F864AE23426A8200407966 /* GraduateSchoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GraduateSchoolCell.xib; sourceTree = "<group>"; };
 		D5DEB9BBAEC5F554284B31AC /* Pods_Epixego.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Epixego.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4F85060071C45B8A6CE516 /* Pods-Epixego.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Epixego.debug.xcconfig"; path = "Target Support Files/Pods-Epixego/Pods-Epixego.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +343,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840C39F9232969B200B296E3 /* About me */ = {
+			isa = PBXGroup;
+			children = (
+				8483F03B23298C560075ECEF /* AboutMeController.swift */,
+				8483F03D232990E80075ECEF /* AboutMeManager.swift */,
+			);
+			path = "About me";
+			sourceTree = "<group>";
+		};
 		8416BA1222D01600003EEE8A = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +386,7 @@
 				8416BA4C22D01BE5003EEE8A /* Controllers */,
 				8416BA2522D01601003EEE8A /* Assets.xcassets */,
 				8416BA2222D01600003EEE8A /* Main.storyboard */,
+				840C39FA232969EA00B296E3 /* ProfileStoryboard.storyboard */,
 				84E55C5A22FCCE1000FCAE5C /* EmployeerStoryboard.storyboard */,
 				8416BA2722D01601003EEE8A /* LaunchScreen.storyboard */,
 				8416BA2A22D01601003EEE8A /* Info.plist */,
@@ -369,9 +447,10 @@
 		8427E0A722E619B1001A5217 /* Profile Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8470458F22DF8D490042A1E6 /* ProfileUserController.swift */,
-				8427E0A322E24EAF001A5217 /* ProfileDataSourceTableView.swift */,
-				8427E0A522E24F75001A5217 /* ProfileDelegateTableView.swift */,
+				84F864A423416CF200407966 /* Base Profile */,
+				840C39F9232969B200B296E3 /* About me */,
+				84EE90C3232C4745000327B6 /* Experience levels */,
+				84F864A323416CD100407966 /* Grad school  */,
 			);
 			path = "Profile Controller";
 			sourceTree = "<group>";
@@ -391,14 +470,13 @@
 		844C391222D50EF400CC426E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84FA85E5232C409700E84883 /* Profile Cells */,
 				8459364422F0C45600B1BA37 /* Result Search Jobs Cell */,
 				8459363822EF6C4100B1BA37 /* Questions Cell */,
 				847A576D22E62236009C1BB7 /* Result Search Cell */,
 				84DDB5DB22DE571A00F0104E /* CPAlertAction */,
 				844C391522D5105600CC426E /* SideMenuCell.swift */,
 				844C391622D5105600CC426E /* SideMenuCell.xib */,
-				8427E09F22E24A5A001A5217 /* ProfileTableViewCell.swift */,
-				8427E0A022E24A5A001A5217 /* ProfileTableViewCell.xib */,
 				84D87B8B22EA0E7600C1A23E /* SkillsChartView */,
 				84D87B9222EA253000C1A23E /* ExperienceDetailsCell.swift */,
 				84D87B9322EA253000C1A23E /* ExperienceDetailsCell.xib */,
@@ -536,6 +614,7 @@
 			isa = PBXGroup;
 			children = (
 				84DDB5BD22D8025400F0104E /* LoginModel.swift */,
+				84EE910C2332F11C000327B6 /* ProfileModel.swift */,
 				84DDB5BF22D803EC00F0104E /* SourceModel.swift */,
 				84DDB5C322D8FDE100F0104E /* GeneralInfoModel.swift */,
 				84DDB5C722D933FB00F0104E /* IkigaiInfoModel.swift */,
@@ -544,6 +623,8 @@
 				84DDB5CD22D938FB00F0104E /* PositionInformationModel.swift */,
 				84DDB5CF22D93C9B00F0104E /* SchoolInfoModel.swift */,
 				84DDB5D122D9473500F0104E /* ProfessionalExperienceInfoModel.swift */,
+				84EE91042332CE55000327B6 /* GenomeModel.swift */,
+				84EE91062332CF6C000327B6 /* MembersValuesModel.swift */,
 				84DDB5D322D947B000F0104E /* PositionsHeldModel.swift */,
 				84DDB5D722DD345700F0104E /* SignUpResposeModel.swift */,
 				847A577222E65BC0009C1BB7 /* ResultSearchPeopleModel.swift */,
@@ -560,6 +641,8 @@
 				848637A8230C784100D62FBE /* ShardsModel.swift */,
 				8487FC8623170D9F00CE691C /* StatusUploadModel.swift */,
 				84918D002321877200DE4810 /* ContactUsModel.swift */,
+				84EE910223318BC2000327B6 /* ResponsePartialProfileModel.swift */,
+				84EEE0C8234277B500339BFE /* MinorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,6 +675,65 @@
 				84ADC7582305BDFA00A24835 /* LandingEmployeeManager.swift */,
 			);
 			path = "Landing Employer Controller";
+			sourceTree = "<group>";
+		};
+		84EE90C3232C4745000327B6 /* Experience levels */ = {
+			isa = PBXGroup;
+			children = (
+				84EE90C4232C4787000327B6 /* ExperienceController.swift */,
+				84EE90C6232C479E000327B6 /* DataSourceExperience.swift */,
+				84F8649F233EB79E00407966 /* DelegateExperience.swift */,
+				84F8649D233D601D00407966 /* ExperienceManager.swift */,
+			);
+			path = "Experience levels";
+			sourceTree = "<group>";
+		};
+		84F864A323416CD100407966 /* Grad school  */ = {
+			isa = PBXGroup;
+			children = (
+				84F864A123416CB900407966 /* GradSchoolController.swift */,
+				84F864A523416E6600407966 /* DataSourceGradSchool.swift */,
+				84F864AB2341760600407966 /* DelegateGradSchool.swift */,
+			);
+			path = "Grad school ";
+			sourceTree = "<group>";
+		};
+		84F864A423416CF200407966 /* Base Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8470458F22DF8D490042A1E6 /* ProfileUserController.swift */,
+				8427E0A322E24EAF001A5217 /* ProfileDataSourceTableView.swift */,
+				8427E0A522E24F75001A5217 /* ProfileDelegateTableView.swift */,
+				84EE910A2332DCB5000327B6 /* ProfileManager.swift */,
+			);
+			path = "Base Profile";
+			sourceTree = "<group>";
+		};
+		84FA85E5232C409700E84883 /* Profile Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8427E09F22E24A5A001A5217 /* ProfileTableViewCell.swift */,
+				8427E0A022E24A5A001A5217 /* ProfileTableViewCell.xib */,
+				84EE90AB232C4127000327B6 /* TitlePositionCell.swift */,
+				84EE90AC232C4127000327B6 /* TitlePositionCell.xib */,
+				84EE90AF232C42D6000327B6 /* ClubOrganizationCell.swift */,
+				84EE90B0232C42D6000327B6 /* ClubOrganizationCell.xib */,
+				84EE90B3232C448E000327B6 /* OtherInterestsCell.swift */,
+				84EE90B4232C448E000327B6 /* OtherInterestsCell.xib */,
+				84EE90B7232C455F000327B6 /* ActivitiesCell.swift */,
+				84EE90B8232C455F000327B6 /* ActivitiesCell.xib */,
+				84EE90BB232C4612000327B6 /* GeneralProfileCell.swift */,
+				84EE90BC232C4612000327B6 /* GeneralProfileCell.xib */,
+				84EE90BF232C46BE000327B6 /* AddFieldCell.swift */,
+				84EE90C0232C46BE000327B6 /* AddFieldCell.xib */,
+				84DD7396233AC5AC0048976C /* ProfessionalExperienceCell.swift */,
+				84DD7397233AC5AC0048976C /* ProfessionalExperienceCell.xib */,
+				84F864A72341709600407966 /* GraduateCell.swift */,
+				84F864A82341709600407966 /* GraduateCell.xib */,
+				84F864AD23426A8200407966 /* GraduateSchoolCell.swift */,
+				84F864AE23426A8200407966 /* GraduateSchoolCell.xib */,
+			);
+			path = "Profile Cells";
 			sourceTree = "<group>";
 		};
 		AD2E44545C1154BF08D07C53 /* Frameworks */ = {
@@ -725,16 +867,26 @@
 			files = (
 				84E55C5B22FCCE1100FCAE5C /* EmployeerStoryboard.storyboard in Resources */,
 				8416BA2922D01601003EEE8A /* LaunchScreen.storyboard in Resources */,
+				84EE90B6232C448E000327B6 /* OtherInterestsCell.xib in Resources */,
 				8459364022EF80EC00B1BA37 /* ExpandableHeaderView.xib in Resources */,
+				84F864B023426A8300407966 /* GraduateSchoolCell.xib in Resources */,
 				8416BA2622D01601003EEE8A /* Assets.xcassets in Resources */,
 				8459363C22EF6C6E00B1BA37 /* QuestionsCell.xib in Resources */,
 				84D87B9522EA253000C1A23E /* ExperienceDetailsCell.xib in Resources */,
 				84DDB5E422DE573600F0104E /* CPAlert.storyboard in Resources */,
+				84EE90C2232C46BE000327B6 /* AddFieldCell.xib in Resources */,
+				84F864AA2341709600407966 /* GraduateCell.xib in Resources */,
 				8427E0A222E24A5A001A5217 /* ProfileTableViewCell.xib in Resources */,
 				8416BA2422D01600003EEE8A /* Main.storyboard in Resources */,
+				840C39FB232969EA00B296E3 /* ProfileStoryboard.storyboard in Resources */,
 				8459364822F0C47B00B1BA37 /* ResultSearchJobsCell.xib in Resources */,
 				847A577122E62274009C1BB7 /* ResultSearchPeopleCell.xib in Resources */,
+				84DD7399233AC5AC0048976C /* ProfessionalExperienceCell.xib in Resources */,
 				844C391822D5105600CC426E /* SideMenuCell.xib in Resources */,
+				84EE90BE232C4612000327B6 /* GeneralProfileCell.xib in Resources */,
+				84EE90BA232C455F000327B6 /* ActivitiesCell.xib in Resources */,
+				84EE90AE232C4127000327B6 /* TitlePositionCell.xib in Resources */,
+				84EE90B2232C42D6000327B6 /* ClubOrganizationCell.xib in Resources */,
 				84D87B8D22EA0E9100C1A23E /* SkillsChartView.xib in Resources */,
 				8469B5A222D65FEE00EF7C0F /* ValidationTextField.xib in Resources */,
 			);
@@ -804,23 +956,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				84491C1022D3AADE00B9F545 /* PeopleContainerController.swift in Sources */,
+				84EEE0C9234277B500339BFE /* MinorModel.swift in Sources */,
 				842A442322F3A28A00FCDD5A /* DetailsJobController.swift in Sources */,
 				84DDB5BE22D8025400F0104E /* LoginModel.swift in Sources */,
+				84EE910D2332F11C000327B6 /* ProfileModel.swift in Sources */,
 				84DDB5CC22D937A900F0104E /* TagsNameModel.swift in Sources */,
+				84F8649E233D601D00407966 /* ExperienceManager.swift in Sources */,
 				848637A7230C766D00D62FBE /* ChangeStatusModel.swift in Sources */,
+				84EE91072332CF6C000327B6 /* MembersValuesModel.swift in Sources */,
 				842A442122F3923300FCDD5A /* ResultSearchPeopleManager.swift in Sources */,
 				84DDB5E822DE579900F0104E /* DisplayAlertMessageExtension.swift in Sources */,
 				8469B5A422D6856800EF7C0F /* ConstantControllers.swift in Sources */,
 				8469B5A022D65FE200EF7C0F /* ValidationTextField.swift in Sources */,
 				84DDB5C022D803EC00F0104E /* SourceModel.swift in Sources */,
+				84EE90B5232C448E000327B6 /* OtherInterestsCell.swift in Sources */,
 				844C391722D5105600CC426E /* SideMenuCell.swift in Sources */,
 				847A577522E662AF009C1BB7 /* ItemsSearchPeopleModel.swift in Sources */,
+				84F864AC2341760600407966 /* DelegateGradSchool.swift in Sources */,
 				844C390E22D3F74A00CC426E /* InternshipContainerController.swift in Sources */,
 				84DDB5E222DE573600F0104E /* FailedAlertVC.swift in Sources */,
 				8427E0A122E24A5A001A5217 /* ProfileTableViewCell.swift in Sources */,
 				84918CFF232184A200DE4810 /* ContactUsManager.swift in Sources */,
 				8440EECB22EBB81900850BAD /* QuestionsLandingDelegate.swift in Sources */,
 				8459365022F0CD4900B1BA37 /* ItemsResultJobsModel.swift in Sources */,
+				84EE90BD232C4612000327B6 /* GeneralProfileCell.swift in Sources */,
 				84DDB5E122DE573600F0104E /* CPAlertVC.swift in Sources */,
 				848637A9230C784100D62FBE /* ShardsModel.swift in Sources */,
 				8459364322F0C26800B1BA37 /* ResultJobSearchController.swift in Sources */,
@@ -829,44 +988,56 @@
 				8459363722EF649D00B1BA37 /* QuestionsModel.swift in Sources */,
 				84DDB5D822DD345800F0104E /* SignUpResposeModel.swift in Sources */,
 				848637AB230C852D00D62FBE /* CandidateStateModel.swift in Sources */,
+				84EE90AD232C4127000327B6 /* TitlePositionCell.swift in Sources */,
 				84DDB5D022D93C9B00F0104E /* SchoolInfoModel.swift in Sources */,
 				846C644022D53FA8000382AA /* ExtensionColor.swift in Sources */,
 				84DDB5CE22D938FB00F0104E /* PositionInformationModel.swift in Sources */,
 				8487FC8B2320574600CE691C /* BlogController.swift in Sources */,
+				84F864A0233EB79E00407966 /* DelegateExperience.swift in Sources */,
+				84F864AF23426A8300407966 /* GraduateSchoolCell.swift in Sources */,
 				84DDB5C622D9123500F0104E /* UserDefaultDB.swift in Sources */,
 				847A577A22E667BB009C1BB7 /* PeopleSearchManager.swift in Sources */,
 				8459363E22EF6FD600B1BA37 /* ExpandableHeaderView.swift in Sources */,
 				84DDB5B622D7B25B00F0104E /* SecondStepSignUpController.swift in Sources */,
 				84DDB5D422D947B000F0104E /* PositionsHeldModel.swift in Sources */,
+				84EE90B1232C42D6000327B6 /* ClubOrganizationCell.swift in Sources */,
 				8416BA4E22D01C1F003EEE8A /* DesignButton.swift in Sources */,
 				8427E0A422E24EB0001A5217 /* ProfileDataSourceTableView.swift in Sources */,
 				84DDB5E322DE573600F0104E /* SuccessAlertVC.swift in Sources */,
 				847A577022E62274009C1BB7 /* ResultSearchPeopleCell.swift in Sources */,
 				84DDB5EA22DE6B4100F0104E /* EnumsConstants.swift in Sources */,
 				84DDB5D222D9473500F0104E /* ProfessionalExperienceInfoModel.swift in Sources */,
+				84EE910323318BC2000327B6 /* ResponsePartialProfileModel.swift in Sources */,
+				84F864A92341709600407966 /* GraduateCell.swift in Sources */,
 				8470459022DF8D490042A1E6 /* ProfileUserController.swift in Sources */,
 				8416BA2122D01600003EEE8A /* LandingController.swift in Sources */,
 				84D87B9422EA253000C1A23E /* ExperienceDetailsCell.swift in Sources */,
 				8459365222F0CDEC00B1BA37 /* JobsResultSourceModel.swift in Sources */,
 				84DDB5C822D933FB00F0104E /* IkigaiInfoModel.swift in Sources */,
 				847A577722E66594009C1BB7 /* JobsModel.swift in Sources */,
+				84EE90B9232C455F000327B6 /* ActivitiesCell.swift in Sources */,
+				8483F03E232990E80075ECEF /* AboutMeManager.swift in Sources */,
 				847A576722E6211E009C1BB7 /* ResultSearchPeopleController.swift in Sources */,
 				844C391122D50D6600CC426E /* SideMenuController.swift in Sources */,
 				8440EEC422EBB0B300850BAD /* QuestionsLandingController.swift in Sources */,
 				84DDB5E522DE573600F0104E /* CPAlertAction.swift in Sources */,
 				84491C0E22D3A3A800B9F545 /* DesignViews.swift in Sources */,
 				84ADC7592305BDFA00A24835 /* LandingEmployeeManager.swift in Sources */,
+				8483F03C23298C560075ECEF /* AboutMeController.swift in Sources */,
 				8488414C2303701B0091258D /* DetailsJobManager.swift in Sources */,
+				84DD7398233AC5AC0048976C /* ProfessionalExperienceCell.swift in Sources */,
 				8454681C22EA0DEF008D3409 /* SkillsChartView.swift in Sources */,
 				8416BA1F22D01600003EEE8A /* AppDelegate.swift in Sources */,
 				847A576C22E621FC009C1BB7 /* ResultSearchPeopleDelegate.swift in Sources */,
 				8459364E22F0CC6000B1BA37 /* ResultJobsModel.swift in Sources */,
 				8459365622F0D3ED00B1BA37 /* ExperienceModel.swift in Sources */,
 				84DDB5C422D8FDE100F0104E /* GeneralInfoModel.swift in Sources */,
+				84EE91052332CE55000327B6 /* GenomeModel.swift in Sources */,
 				8459365422F0D0FB00B1BA37 /* GeneralInfoResultJobsModel.swift in Sources */,
 				84DDB5AF22D6AE2E00F0104E /* APIConstants.swift in Sources */,
 				84DDB5BB22D800EE00F0104E /* DBLocalKeys.swift in Sources */,
 				8416BA5222D01FF3003EEE8A /* DesignTextField.swift in Sources */,
+				84F864A623416E6600407966 /* DataSourceGradSchool.swift in Sources */,
 				8459364722F0C47B00B1BA37 /* ResultSearchJobsCell.swift in Sources */,
 				84491C1222D3DCB200B9F545 /* LoginController.swift in Sources */,
 				84DDB5B322D7961500F0104E /* HTTPController.swift in Sources */,
@@ -875,18 +1046,23 @@
 				847A576A22E621B3009C1BB7 /* ResultSearchPeopleDataSource.swift in Sources */,
 				84DDB5EC22DE923200F0104E /* CustomDesign.swift in Sources */,
 				8459364A22F0C91800B1BA37 /* ResultJobsDataSourceController.swift in Sources */,
+				84EE90C5232C4787000327B6 /* ExperienceController.swift in Sources */,
 				84DDB5B122D795B200F0104E /* Reachability.swift in Sources */,
 				84DDB5DA22DE45A700F0104E /* VerficationController.swift in Sources */,
+				84EE90C7232C479E000327B6 /* DataSourceExperience.swift in Sources */,
 				8427E0A622E24F75001A5217 /* ProfileDelegateTableView.swift in Sources */,
 				8440EEC622EBB2C100850BAD /* InternShipSearchManager.swift in Sources */,
 				84E55C5E22FCD05100FCAE5C /* LandingEmployerController.swift in Sources */,
 				8440EEC922EBB80A00850BAD /* QuestionsLandingDataSource.swift in Sources */,
 				8459363B22EF6C6E00B1BA37 /* QuestionsCell.swift in Sources */,
+				84F864A223416CB900407966 /* GradSchoolController.swift in Sources */,
 				8487FC8723170D9F00CE691C /* StatusUploadModel.swift in Sources */,
 				84918CFD23216BCB00DE4810 /* ContactUsController.swift in Sources */,
 				8469B59C22D64D6C00EF7C0F /* SignUpController.swift in Sources */,
 				84D87B8F22EA23B700C1A23E /* DetailsPeopleDataSourceController.swift in Sources */,
+				84EE90C1232C46BE000327B6 /* AddFieldCell.swift in Sources */,
 				84D87B9122EA23EC00C1A23E /* DetailsPeopleDelegateController.swift in Sources */,
+				84EE910B2332DCB5000327B6 /* ProfileManager.swift in Sources */,
 				84F442A022F24983005D2EEC /* ResultJobManagerController.swift in Sources */,
 				84DDB5CA22D9366300F0104E /* HighschoolInfoModel.swift in Sources */,
 				84DDB5D622DCDF3500F0104E /* SignUpManager.swift in Sources */,

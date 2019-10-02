@@ -16,7 +16,10 @@ class SchoolInfoModel: Mappable {
     var locationState            : String?
     var locationCountry          : String?
     var graduationYear           : String?
-    var majorMinor               : [TagsNameModel]?
+    var degree                   : String?
+    var major                    : [TagsNameModel]?
+    var minor                    : [MinorModel]?
+    // add minor
     var favoriteSubjects         : [TagsNameModel]?
     var sportsGames              : [PositionInformationModel]?
     var clubsOrgs                : [PositionInformationModel]?
@@ -25,8 +28,6 @@ class SchoolInfoModel: Mappable {
     var otherTraining            : [TagsNameModel]?
     var impactfulActivities      : [TagsNameModel]?
     var proudestAcomplishments   : [String]?
-    
-    
     
     required convenience init?(map: Map) {
         self.init()
@@ -38,7 +39,9 @@ class SchoolInfoModel: Mappable {
         locationState            <- map["locationState"]
         locationCountry          <- map["locationCountry"]
         graduationYear           <- map["graduationYear"]
-        majorMinor               <- map["majorMinor"]
+        degree                   <- map["degree"]
+        major                    <- map["major"]
+        minor                    <- map["minor"]
         favoriteSubjects         <- map["favoriteSubjects"]
         sportsGames              <- map["sportsGames"]
         clubsOrgs                <- map["clubsOrgs"]

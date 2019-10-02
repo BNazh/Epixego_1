@@ -87,11 +87,9 @@ class HighschoolInfoModel: Mappable {
      },
      */
     
-    
     required convenience init?(map: Map) {
         self.init()
     }
-    
     
     func mapping(map: Map) {
         name                     <- map["name"]
@@ -109,5 +107,3 @@ class HighschoolInfoModel: Mappable {
         proudestAcomplishments   <- map["proudestAcomplishments"]
     }
 }
-
-

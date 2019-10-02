@@ -18,8 +18,10 @@ class SourceModel: Mappable {
     var graduateInfo              : SchoolInfoModel?
     var earlyProfessionalInfo     : ProfessionalExperienceInfoModel?
     var advancedProfessionalInfo  : ProfessionalExperienceInfoModel?
-    var jobs                      : [JobsModel]?
+    var professionalInfo          : ProfessionalExperienceInfoModel?
 
+    var jobs                      : [JobsModel]?
+    var genomeInfo                : GenomeModel?
     /*
     var ikigaiInfo      : IkigaiInfoModel?
      var highschoolInfo  : highschoolInfo?
@@ -43,7 +45,9 @@ class SourceModel: Mappable {
         graduateInfo             <- map["graduateInfo"]
         earlyProfessionalInfo    <- map["earlyProfessionalInfo"]
         advancedProfessionalInfo <- map["advancedProfessionalInfo"]
+        professionalInfo         <- map["professionalInfo"]
         jobs                     <- map["jobs"]
+        genomeInfo               <- map["genome"]
     }
     /*  "generalInfo": {
      "name": "moath yahia",

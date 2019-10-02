@@ -13,9 +13,13 @@ struct APIConstants {
     //8080 frontend
     //http://13.56.79.215:8080
 //    http://localhost:3000/epixego/
-    static let baseURl: String = "http://13.56.79.215:3000/epixego/"
+    static let baseURl: String = "http://18.144.12.142:3000/epixego/"
 // http://13.56.79.215:3000/
+    //http://13.56.158.13:8080
+    //52.53.183.115:8080
     static let signInURL: String = "signIn"
+    
+    static let profileURL: String = "profile/"
     
     static let profileRegsiterURL: String = "profile/register"
     
@@ -37,4 +41,6 @@ struct APIConstants {
     static let contactUsURL: String = "email"
     
     static let uploadURL: String = "uploads/"
+    
+    static let partialUpdateURL: String = "profile/partialUpdate/"
 }

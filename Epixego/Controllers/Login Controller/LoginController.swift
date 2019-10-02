@@ -100,9 +100,15 @@ class LoginController: UIViewController {
     }
     
     func goToProfile() {
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: ConstantControllers.profileUserController) as! ProfileUserController
+       /* let controller = self.storyboard?.instantiateViewController(withIdentifier: ConstantControllers.profileUserController) as! ProfileUserController
         controller.loginModel = loginModel
-        self.navigationController?.pushViewController(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)*/
+        
+        let storyboard = UIStoryboard(name: "ProfileStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: ConstantControllers.profileUserController) as! ProfileUserController
+        controller.loginModel = loginModel
+        let navigation = UINavigationController(rootViewController: controller)
+        self.present(navigation, animated: true, completion: nil)
     }
     
 }

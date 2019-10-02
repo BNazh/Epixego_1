@@ -36,4 +36,10 @@ struct ConstantControllers {
     static let blogController: String = "BlogController"
     
     static let contactUsVC: String = "ContactUsController"
+    
+    static let aboutMeVC: String = "AboutMeController"
+    
+    static let experienceProfileVC: String = "ExperienceController"
+    
+    static let gradSchoolVC: String = "GradSchoolController"
 }

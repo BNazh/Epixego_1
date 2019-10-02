@@ -71,7 +71,7 @@ class ResultJobSearchController: UIViewController, UIAdaptivePresentationControl
 
             switch (selectRow) {
             case 0:
-                self.jobStatus = .rejected
+                self.jobStatus = .suggested
                 break
             case 1:
                 self.jobStatus = .contacted

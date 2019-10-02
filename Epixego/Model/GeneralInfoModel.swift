@@ -38,7 +38,6 @@ class GeneralInfoModel: Mappable {
         self.init()
     }
     
-    
     func mapping(map: Map) {
         name                  <- map["name"]
         email                 <- map["email"]
@@ -62,9 +61,7 @@ class GeneralInfoModel: Mappable {
         confirmationhash      <- map["confirmationhash"]
         expiration            <- map["expiration"]
         isConfirmed           <- map["isConfirmed"]
-
     }
-    
     
 /*  "generalInfo": {
  "name": "moath yahia",

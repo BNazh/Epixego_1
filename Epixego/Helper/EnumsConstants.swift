@@ -17,14 +17,13 @@ class EnumsConstants {
         case HighSchool = "hs"
         case College = "col"
         case GraduateSchool = "gs"
-        case EarlyProfessional = "ep"
-        case AdvancedProfessional = "ap"
+        case Professional = "ep"
     }
     
     enum JobStatus: String {
         case applied
         case contacted
         case saved
-        case rejected
+        case suggested
     }
 }

@@ -10,14 +10,6 @@ import Foundation
 import UIKit
 import SDWebImage
 
-enum enumLevel: String {
-    case HighSchool = "hs"
-    case College = "col"
-    case GraduateSchool = "gs"
-    case EarlyProfessional = "ep"
-    case AdvancedProfessional = "ap"
-}
-
 
 extension ResultSearchPeopleController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

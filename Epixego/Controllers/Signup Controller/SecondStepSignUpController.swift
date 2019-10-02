@@ -79,9 +79,7 @@ class SecondStepSignUpController: UIViewController {
             case self.levelArray[2]:
                 self.levelEnum = .GraduateSchool
             case self.levelArray[3]:
-                self.levelEnum = .EarlyProfessional
-            case self.levelArray[4]:
-                self.levelEnum = .AdvancedProfessional
+                self.levelEnum = .Professional
             default:
                 print("defualts")
             }
@@ -209,7 +207,7 @@ extension SecondStepSignUpController: ValidationDelegate {
         highschoolInfo.otherInterests          = [positionInformationModel]
         
         //**** school info
-        collegeInfo.majorMinor = [tagNames]
+        collegeInfo.major = [tagNames]
         collegeInfo.favoriteSubjects = [tagNames]
         collegeInfo.otherTraining = [tagNames]
         collegeInfo.impactfulActivities = [tagNames]
@@ -219,7 +217,7 @@ extension SecondStepSignUpController: ValidationDelegate {
         collegeInfo.otherInterests = [positionInformationModel]
        
         // graduate
-        graduateInfo.majorMinor = [tagNames]
+        graduateInfo.major = [tagNames]
         graduateInfo.favoriteSubjects = [tagNames]
         graduateInfo.otherTraining = [tagNames]
         graduateInfo.impactfulActivities = [tagNames]
@@ -229,13 +227,13 @@ extension SecondStepSignUpController: ValidationDelegate {
         graduateInfo.otherInterests = [positionInformationModel]
         
         //** earlyProfessionalInfo
-        earlyProfessionalInfo.positionsHeld = [positionInformationModel]
+//        earlyProfessionalInfo.positionsHeld = [PositionsHeldModel]
         earlyProfessionalInfo.clubsOrgs     = [positionInformationModel]
         earlyProfessionalInfo.otherInterests = [positionInformationModel]
         earlyProfessionalInfo.impactfulActivities = [tagNames]
         
         //advancedProfessionalInfo
-        advancedProfessionalInfo.positionsHeld = [positionInformationModel]
+//        advancedProfessionalInfo.positionsHeld = [positionInformationModel]
         advancedProfessionalInfo.clubsOrgs     = [positionInformationModel]
         advancedProfessionalInfo.otherInterests = [positionInformationModel]
         advancedProfessionalInfo.impactfulActivities = [tagNames]

@@ -13,6 +13,8 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var containView : UIView!
     @IBOutlet weak var titleLbl    : UILabel!
     @IBOutlet weak var bodyLbl     : UILabel!
+    
+    @IBOutlet weak var editBtn     : UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

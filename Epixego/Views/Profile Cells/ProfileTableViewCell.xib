@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,16 +14,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dZ-iK-yax">
-                        <rect key="frame" x="8" y="4" width="304" height="80"/>
+                        <rect key="frame" x="8" y="4" width="304" height="80.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-7F-gKh">
-                                <rect key="frame" x="13" y="12" width="165" height="22"/>
+                                <rect key="frame" x="13" y="12" width="81" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="qRY-Yr-ykR"/>
                                     <constraint firstAttribute="height" constant="22" id="ryS-IY-aFN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -33,17 +30,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details about me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jo-Hs-Trq">
-                                <rect key="frame" x="13" y="49" width="280" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="13" y="49" width="280" height="22.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.24313725489999999" green="0.2274509804" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hM-ZB-q2i">
+                                <rect key="frame" x="266" y="9" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Hx1-rc-OXQ"/>
+                                    <constraint firstAttribute="width" constant="28" id="m3G-XL-ZTT"/>
+                                </constraints>
+                                <state key="normal" image="edit-icon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hSt-7F-gKh" firstAttribute="top" secondItem="3dZ-iK-yax" secondAttribute="top" constant="12" id="Cwx-dn-kkJ"/>
+                            <constraint firstItem="9hM-ZB-q2i" firstAttribute="top" secondItem="3dZ-iK-yax" secondAttribute="top" constant="9" id="a2k-Xm-8tn"/>
                             <constraint firstAttribute="trailing" secondItem="2jo-Hs-Trq" secondAttribute="trailing" constant="11" id="dHV-S5-mrW"/>
                             <constraint firstAttribute="bottom" secondItem="2jo-Hs-Trq" secondAttribute="bottom" constant="9" id="eXP-X9-twp"/>
+                            <constraint firstAttribute="trailing" secondItem="9hM-ZB-q2i" secondAttribute="trailing" constant="10" id="lN9-CC-MqG"/>
                             <constraint firstItem="hSt-7F-gKh" firstAttribute="leading" secondItem="3dZ-iK-yax" secondAttribute="leading" constant="13" id="lkX-Hj-40f"/>
                             <constraint firstItem="2jo-Hs-Trq" firstAttribute="leading" secondItem="3dZ-iK-yax" secondAttribute="leading" constant="13" id="sFU-C3-UxJ"/>
                             <constraint firstItem="2jo-Hs-Trq" firstAttribute="top" secondItem="hSt-7F-gKh" secondAttribute="bottom" constant="15" id="w9N-y5-2J7"/>
@@ -62,9 +69,13 @@
             <connections>
                 <outlet property="bodyLbl" destination="2jo-Hs-Trq" id="yV4-Yy-MNP"/>
                 <outlet property="containView" destination="3dZ-iK-yax" id="bjE-3p-F5w"/>
+                <outlet property="editBtn" destination="9hM-ZB-q2i" id="VAV-VL-ofx"/>
                 <outlet property="titleLbl" destination="hSt-7F-gKh" id="auV-SI-lfB"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="edit-icon" width="32" height="32"/>
+    </resources>
 </document>

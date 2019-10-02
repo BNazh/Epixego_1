@@ -26,6 +26,7 @@ class SideMenuController: UIViewController {
     
     
     func goToController(contr: String) {
+        
         let controller = self.storyboard?.instantiateViewController(withIdentifier: contr) 
         self.navigationController?.pushViewController(controller!, animated: true)
     }
@@ -57,6 +58,7 @@ extension SideMenuController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             print("Internship")
+
         case 1:
             print("Role")
         case 2:

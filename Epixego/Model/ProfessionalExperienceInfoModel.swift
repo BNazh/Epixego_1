@@ -12,7 +12,7 @@ import ObjectMapper
 
 class  ProfessionalExperienceInfoModel: Mappable {
   
-    var positionsHeld           : [PositionInformationModel]?
+    var positionsHeld           : [PositionsHeldModel]?
     var clubsOrgs               : [PositionInformationModel]?
     var otherInterests          : [PositionInformationModel]?
     var impactfulActivities     : [TagsNameModel]?
@@ -70,7 +70,6 @@ class  ProfessionalExperienceInfoModel: Mappable {
         self.init()
     }
     
-    
     func mapping(map: Map) {
         positionsHeld            <- map["positionsHeld"]
         clubsOrgs                <- map["clubsOrgs"]
@@ -81,6 +80,5 @@ class  ProfessionalExperienceInfoModel: Mappable {
         canBeImproved            <- map["canBeImproved"]
         aspirationalRole         <- map["aspirationalRole"]
         adviceToSelf             <- map["adviceToSelf"]
-
     }
 }

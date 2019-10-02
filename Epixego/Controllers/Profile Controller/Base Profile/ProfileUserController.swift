@@ -9,8 +9,13 @@
 import UIKit
 import Charts
 import SDWebImage
+import SideMenu
 
-class ProfileUserController: UIViewController {
+protocol AboutMeProtocol {
+    func reloadDataFromAPi()
+}
+
+class ProfileUserController: UIViewController, AboutMeProtocol {
 
     @IBOutlet fileprivate weak var skillsChart   : HorizontalBarChartView!
     @IBOutlet fileprivate weak var profileImg    : UIImageView!
@@ -19,40 +24,54 @@ class ProfileUserController: UIViewController {
     @IBOutlet weak var tableView                 : UITableView!
 
     var loginModel = LoginModel()
-
+    lazy var http = HTTPController()
+    lazy var profileModel = ProfileModel()
+    var levelExperience = 0
+    
     var values: [Double] = [40.0, 35.0, 26.0, 90.0, 70.0, 60.0, 77.0, 80.0, 50.0]
-    var moods = ["Other" ,"Academics" ,"Community Service" ,"Communication" ,"LeaderShip" ,"Games" ,"Sports" ,"Literary" ,"Art"]
+    var skills = ["Other", "Academics", "Community Service", "Communication", "LeaderShip", "Games", "Sports", "Literary", "Art"]
     
     var colorArray: [UIColor] = [UIColor.init(hex: "A3C8D9") ,UIColor.init(hex: "4488A8") ,UIColor.init(hex: "BD9CD3") ,UIColor.init(hex: "9070C1"),UIColor.init(hex: "765DDC") ,UIColor.init(hex: "6764D8") ,UIColor.init(hex: "97ADEF") ,UIColor.init(hex: "4964C5"), UIColor.init(hex: "3E3AA4")]
     
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
+    
+    var flagLoadingData: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        http.delegate = self
         print(loginModel.type ?? "")
-        setupView()
-        
         fillData()
+        setupView()
     }
     
     func setupView() {
         setupChart()
         
         CustomDesign.setBackgroundImage(view: self.view)
-        
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg.layer.masksToBounds = true
         
         let nib = UINib(nibName: "ProfileTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
-        
         tableView.estimatedRowHeight = 50
+        
+        let professionalNib = UINib(nibName: "ProfessionalExperienceCell", bundle: nil)
+        tableView.register(professionalNib, forCellReuseIdentifier: "professionalExerienceCell")
+        
+        let graduateSchoolNib = UINib(nibName: "GraduateSchoolCell", bundle: nil)
+        tableView.register(graduateSchoolNib, forCellReuseIdentifier: "graduateSchoolCell")
+    }
+    
+    @IBAction func sidebarBtn(sender: UIBarButtonItem) {
+        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     fileprivate func fillData() {
+        self.title = "My Profile"
         profileImg.sd_cancelCurrentImageLoad()
         nameLbl.text = loginModel.source?.generalInfo?.name ?? ""
      
@@ -60,9 +79,25 @@ class ProfileUserController: UIViewController {
 
         let fullStr = APIConstants.baseURl + APIConstants.uploadURL + imageName
         
-        
+        values = loginModel.source?.genomeInfo?.members?.map({ Double($0.weight ?? 0) }) ?? [0.0]
         
         profileImg?.sd_setImage(with: URL(string: fullStr), placeholderImage: UIImage.init(named: "avatarBlack-icon"), options: .continueInBackground, completed: nil)
+        
+
+        let level = loginModel.source?.generalInfo?.level ?? ""
+
+        switch level {
+        case "hs":
+            levelExperience = 2
+        case "col":
+            levelExperience = 3
+        case "gs":
+            levelExperience = 4
+        case "ep":
+            levelExperience = 5
+        default:
+            levelExperience = 2 // for testing now
+        }
     }
     
     func setupChart()  {
@@ -83,7 +118,7 @@ class ProfileUserController: UIViewController {
         xAxis.granularity =   0
         xAxis.valueFormatter = self
         skillsChart.fitBars = true
-        
+
         skillsChart.animate(yAxisDuration: 2.5)
 
         let spaceForBar = 10.0
@@ -105,8 +140,12 @@ class ProfileUserController: UIViewController {
         skillsChart.animate(yAxisDuration: 1.2)
         skillsChart.data = chartMain
     }
+    
+    func reloadDataFromAPi() {
+        let path = APIConstants.baseURl + APIConstants.profileURL + UserDefaultDB.shared.getUserDefaultString(key: DBLocalKeys.userId)
+        http.get(path: path, parameter: [:], tag: 1)
+    }
 }
-
 
 extension ProfileUserController: ChartViewDelegate {
     
@@ -114,7 +153,7 @@ extension ProfileUserController: ChartViewDelegate {
 
 extension ProfileUserController: IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return moods[Int(value) % moods.count]
+        return skills[Int(value) % skills.count]
     }
 }
 

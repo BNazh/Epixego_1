@@ -12,7 +12,7 @@ import ObjectMapper
 extension LoginController: HttpControllerDelegate {
  
     func receivedResponseArray(_ dicResponse: [String: Any], tag: Int) {
-        print(dicResponse)
+
         loginModel = Mapper<LoginModel>().map(JSON: dicResponse)!
         
         UserDefaultDB.shared.addUserDefaultString(value: loginModel.token ?? "", key: DBLocalKeys.token)
@@ -20,11 +20,9 @@ extension LoginController: HttpControllerDelegate {
         UserDefaultDB.shared.addUserDefaultString(value: loginModel.type ?? "", key: DBLocalKeys.type)
         
         goToProfile()
-
     }
     
     func receivedErrorWithMessage(_ message: String) {
         print("error")
     }
-    
 }
